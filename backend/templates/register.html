@@ -1,21 +1,60 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Register — Notes App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — Notes App</title>
   <link rel="stylesheet" href="/static/css/styles.css">
- </head>
+</head>
 <body>
-  <div class="container auth">
-    <h1>Create account</h1>
-    <form id="register-form">
-      <input id="username" placeholder="Choose a username" autocomplete="username">
-      <input id="password" type="password" placeholder="Choose a password" autocomplete="new-password">
-      <button type="submit">Create account</button>
-    </form>
-    <p>Have an account? <a href="/login">Sign in</a></p>
+  <div class="auth-page">
+    <div class="auth-container">
+      <div class="auth-box">
+        <h1 class="auth-title">Create Account</h1>
+        <p class="auth-subtitle">Join millions enjoying the best note-taking experience</p>
+        
+        <div id="auth-message"></div>
+        
+        <form id="register-form" class="auth-form">
+          <div class="form-group">
+            <label class="form-label">Username</label>
+            <input 
+              type="text"
+              id="username" 
+              class="form-input"
+              placeholder="Choose a unique username" 
+              autocomplete="username"
+              required
+              minlength="3"
+              maxlength="20"
+            >
+            <small style="color: rgba(255,255,255,0.5); font-size: 11px; margin-top: 4px; display: block;">3-20 characters, letters and numbers only</small>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input 
+              type="password"
+              id="password" 
+              class="form-input"
+              placeholder="Create a strong password" 
+              autocomplete="new-password"
+              required
+              minlength="6"
+            >
+            <small style="color: rgba(255,255,255,0.5); font-size: 11px; margin-top: 4px; display: block;">Minimum 6 characters recommended</small>
+          </div>
+
+          <button type="submit" class="auth-button">Create Account</button>
+        </form>
+
+        <div class="auth-footer">
+          <p>Already have an account? <a href="/login">Sign in here</a></p>
+        </div>
+      </div>
+    </div>
   </div>
+
   <script src="/static/js/login.js"></script>
 </body>
 </html>

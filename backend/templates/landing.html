@@ -1,26 +1,66 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Notes App — Landing</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App — The #1 Note-Taking Experience</title>
   <link rel="stylesheet" href="/static/css/styles.css">
-  </head>
-  <body>
-    <div class="landing">
-      <div class="hero">
-        <h1 class="logo">Notes</h1>
-        <p class="tag">Simple, fast notes with a tiny demo auth.</p>
-        <div class="cta">
-          <a class="btn" href="/register">Get started</a>
-          <a class="btn ghost" href="/login">Sign in</a>
+</head>
+<body>
+  <div class="landing">
+    <div class="hero">
+      <h1 class="logo">✨ Notes</h1>
+      <p class="tag">The world's most stunning note-taking experience</p>
+      
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-card-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Instant note creation and sync</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">🔒</div>
+          <h3>Secure</h3>
+          <p>Your notes, safely protected</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">🎨</div>
+          <h3>Beautiful UI</h3>
+          <p>Modern design that inspires</p>
         </div>
       </div>
-      <div class="foot">Notes stored locally on server in `frontend/notes.json`.</div>
+
+      <div class="cta">
+        <a class="btn primary" href="/register">🚀 Get Started Free</a>
+        <a class="btn secondary" href="/login">Sign In</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-number">10K+</div>
+          <div class="stat-label">Happy Users</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1M+</div>
+          <div class="stat-label">Notes Created</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99.9%</div>
+          <div class="stat-label">Uptime</div>
+        </div>
+      </div>
     </div>
+
+    <div class="foot">
+      Built with ❤️ • Secure • Fast • Beautiful • Premium Experience
+    </div>
+  </div>
+
   <script>
-    // small entrance animation
-    document.documentElement.classList.add('ready');
+    // Smooth entrance animations
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.style.opacity = '1';
+    });
   </script>
-  </body>
- </html>
+</body>
+</html>
