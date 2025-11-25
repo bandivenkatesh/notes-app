@@ -1,119 +1,174 @@
-# notes-app
+# Notes App
 
-A simple, fast notes application with user authentication and a responsive UI. Built with Flask backend and vanilla JavaScript frontend.
+A modern notes application with user authentication and a responsive UI. Built with Flask backend and vanilla JavaScript frontend.
 
-## Features
+## 🎯 Project Status
 
-- **User Authentication**: Register, login, logout with password hashing
-- **Notes CRUD**: Create, read, update, delete notes
-- **Responsive Design**: Works on desktop and mobile
-- **Smooth Animations**: Fade-in transitions and focus effects
-- **Session Management**: Secure session-based auth
-- **Persistent Storage**: JSON-based data files
+**Phase 1:** ✅ Complete - Core features implemented and tested
+**Phase 2:** 📋 Planned - Advanced features in roadmap
 
-## Tech Stack
+See [PHASE2_ROADMAP.md](PHASE2_ROADMAP.md) for upcoming features.
 
-- **Backend**: Flask (Python 3)
-- **Frontend**: HTML5, CSS3, JavaScript (vanilla)
-- **Database**: JSON files
-- **Security**: werkzeug password hashing
-
-## Quick Start
+## 🚀 Quick Start
 
 ### Prerequisites
 - Python 3.7+
+- pip (Python package manager)
 
-### Installation & Running
+### Installation
 
 ```bash
-cd frontend
-
-# Optional: Create virtual environment
-python3 -m venv venv
-source venv/bin/activate
+# Clone or navigate to project
+cd notes-app/backend
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Start the server
+# Run the application
 python app.py
 ```
 
 The app will be available at **http://localhost:5000**
 
-## Pages
+## 📁 Project Structure
 
-| Route | Purpose |
-|-------|---------|
-| `/` | Landing page with sign-in/register CTAs |
-| `/register` | Create new account |
-| `/login` | Sign in to existing account |
-| `/app` | Protected notes interface (redirects to login if not authenticated) |
+See [docs/FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTURE.md) for detailed folder organization.
 
-## API Endpoints
+```
+notes-app/
+├── backend/              # Flask application & API
+├── frontend/static/      # CSS, JavaScript, images
+├── docs/                 # Documentation
+└── README.md            # This file
+```
+
+## ✨ Features
 
 ### Authentication
-- `POST /api/register` - Register new user
-- `POST /api/login` - Login and create session
-- `POST /api/logout` - Clear session
+- ✅ User registration and login
+- ✅ Secure password hashing
+- ✅ Session-based authentication
+- ✅ Logout functionality
 
-### Notes
-- `GET /api/notes` - Fetch all notes
-- `POST /api/notes` - Create new note
-- `PUT /api/notes/<id>` - Update note
-- `DELETE /api/notes/<id>` - Delete note
+### Notes Management
+- ✅ Create, read, update, delete notes
+- ✅ Note timestamps
+- ✅ Search and sort
+- ✅ Responsive UI
 
-## Data Storage
+### User Experience
+- ✅ Beautiful landing page
+- ✅ Smooth animations
+- ✅ Mobile-friendly design
+- ✅ Form validation
+- ✅ Error handling
 
-- **Users**: `frontend/users.json` (with hashed passwords)
-- **Notes**: `frontend/notes.json`
+## 📚 Documentation
 
-## Testing
+| Document | Purpose |
+|----------|---------|
+| [docs/API.md](docs/API.md) | API endpoints reference |
+| [docs/FEATURES.md](docs/FEATURES.md) | Completed features list |
+| [docs/FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTURE.md) | Project organization |
+| [PHASE2_ROADMAP.md](PHASE2_ROADMAP.md) | Planned features |
 
-See [TEST_RESULTS.md](TEST_RESULTS.md) for test documentation and curl examples.
+## 🔗 API Endpoints
 
-### Quick Test
+### Authentication (`/api/auth`)
+- `POST /register` - Create account
+- `POST /login` - Sign in
+- `POST /logout` - Sign out
+- `GET /me` - Get current user
 
-```bash
-# Register a user
-curl -X POST http://127.0.0.1:5000/api/register \
-  -H "Content-Type: application/json" \
-  -d '{"username":"testuser","password":"pass123"}'
+### Notes (`/api/notes`)
+- `GET /notes` - List all notes
+- `POST /notes` - Create note
+- `GET /notes/<id>` - Get single note
+- `PUT /notes/<id>` - Update note
+- `DELETE /notes/<id>` - Delete note
 
-# Create a note
-curl -X POST http://127.0.0.1:5000/api/notes \
-  -H "Content-Type: application/json" \
-  -d '{"title":"My Note","content":"Hello world"}'
+See [docs/API.md](docs/API.md) for full documentation.
 
-# Get all notes
-curl http://127.0.0.1:5000/api/notes
+## 🧪 Testing
+
+### Test Account
+```
+Username: alice
+Password: secret123
 ```
 
-## File Structure
+Or create a new account by visiting the app.
+
+### Test Flow
+1. Visit `http://localhost:5000`
+2. Click "Get started"
+3. Create an account
+4. Write and manage notes
+5. Sign out and sign back in
+
+## 💾 Data Storage
+
+- **Users:** `backend/data/users.json` (with hashed passwords)
+- **Notes:** `backend/data/notes.json`
+
+Data is persisted locally using JSON files. For production, migrate to a proper database (see Phase 2 roadmap).
+
+## 🛠️ Development
+
+### Project Architecture
 
 ```
-frontend/
-├── app.py                 # Flask application
-├── requirements.txt       # Python dependencies
-├── notes.json            # Notes storage
-├── users.json            # Users storage
-├── templates/
-│   ├── landing.html      # Home page
-│   ├── login.html        # Login form
-│   ├── register.html     # Registration form
-│   └── notes.html        # Notes interface
-└── static/
-    ├── app.js            # Notes app script
-    ├── login.js          # Auth form script
-    └── styles.css        # Styling
+Backend: Flask with modular organization
+├── routes/   - API endpoints
+├── models/   - Data models
+├── utils/    - Helper functions
+└── config.py - Configuration
+
+Frontend: Vanilla JavaScript
+├── CSS animations & transitions
+├── Form validation
+└── API client
 ```
 
-## Development
+### Adding New Features
 
-The app runs in debug mode with auto-reload. Edit files and the server will restart automatically.
+1. Create route in `backend/routes/`
+2. Add model logic in `backend/models/`
+3. Add validators in `backend/utils/validators.py`
+4. Create frontend form in `backend/templates/`
+5. Add JavaScript handler in `frontend/static/js/`
 
-For production, use a proper WSGI server like Gunicorn:
-```bash
-gunicorn -w 4 -b 0.0.0.0:5000 app:app
-```
+## 🔐 Security
+
+- Passwords hashed with werkzeug (scrypt algorithm)
+- Session-based authentication
+- Protected routes with authentication checks
+- Input validation on all endpoints
+- CORS-safe (same-origin design)
+
+## 📈 Next Steps (Phase 2)
+
+Priority features:
+1. Rich text editor / Markdown support
+2. Note tags and categories
+3. Search functionality
+4. Database migration (SQLite/PostgreSQL)
+5. Mobile app support
+
+See [PHASE2_ROADMAP.md](PHASE2_ROADMAP.md) for full roadmap.
+
+## 🤝 Contributing
+
+This is a learning/demo project. Feel free to fork and experiment!
+
+## 📝 License
+
+MIT License - feel free to use for learning purposes.
+
+---
+
+**Built with:** Flask, Vanilla JavaScript, JSON  
+**Last Updated:** 2025-11-25  
+**Status:** Phase 1 Complete ✅
+
 # notes-app

@@ -1,0 +1,23 @@
+[
+  {
+    "username": "bandi",
+    "password_hash": "scrypt:32768:8:1$GiKemPqwFXAQScVT$5484a6bbaa58809040d14c07af3ce85e8aadddf931dcf11c46971abbb1435055250556ab7456b91e7180eff63ee3f931acd9ef7b9cd80cd04a347cbec19613de",
+    "created_at": "2025-11-25T09:17:42.386010Z"
+  },
+  {
+    "username": "testuser",
+    "password_hash": "scrypt:32768:8:1$5oIjCkAHVSbmFKfo$bbdb8aa2a5f1237046a832309e47a5b8ff496faf008a259ef35df8a0f7ff519c5b4f260d7d81fda40662cba12c4cce9fb29c74c339a8c2432d41ddf5823d33ab",
+    "created_at": "2025-11-25T09:21:22.149461Z"
+  },
+  {
+    "username": "alice",
+    "password_hash": "scrypt:32768:8:1$h99RtESRm9zSbgTG$f34eb58bcee7f5b20826efb391d1c405da67a4604b47e16bfa6f77ea8251661f92725110503f2e3152acb1feadda09bce94ea20b9d84558e897f0b8ffec21916",
+    "created_at": "2025-11-25T09:25:10.608719Z"
+  },
+  {
+    "id": "5790ed1da13644f18f1ba6a307e8de4c",
+    "username": "venky",
+    "password_hash": "scrypt:32768:8:1$M45Ob03tT6Wm5nSs$10649492260ac8a4e7335ec01b22b3de10214d0b403b0f0440bd4383dbcf1461b26573c35c21798bc2db6ce270810338dcd60d166bd56576050c8656d3e04aae",
+    "created_at": "2025-11-25T09:41:50.620988Z"
+  }
+]
